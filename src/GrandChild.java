@@ -27,7 +27,7 @@ public class GrandChild {
             }  System.out.println();
         }
         //count calculate
-        for (String fstr :father) {
+        for (String fstr:father) {
             if(fstr.equals(son)) {
                 System.out.println(fstr);
                 count++;
