@@ -1,19 +1,38 @@
+import java.util.Scanner;
+
 public class GrandChild {
-    static String[][] parent = {{"luke", "shaw"}, {"wayne", "rooney"}, {"rooney","ronaldo"},{"shaw","rooney"}};
-    static int length= parent.length;
-    static String[] father = new String[length] ;
-    static String[] child = new String[length];
+    static Scanner input= new Scanner(System.in);
+    static String[][] parent = {{"luke", "shaw"},
+                                {"wayne", "rooney"},
+                                {"rooney","ronaldo"},
+                                {"shaw","rooney"}};
+    static int size = parent.length;
+    static String gFather = "rooney";
+    static String son;
+    static int count = 0;
+    static String[] father = new String[size] ;
+
     public static void main(String[] args) {
-        for (int i = 0; i < parent.length; i++) {
-            father[i]=parent[i][1];
-            if(father(String.valueOf(parent[i][1]))) {
-                child=
-            }
-            }
-            child[i]=parent[i][0];
+
+      //  System.out.println("Array Element Size");
+        for (int i = 0; i < size; i++) {
+            int columnSize = parent[i].length;
+            for (int j = 0; j < columnSize; j++) {
+                if (j == 1) {
+                    father[i] = parent[i][j];
+                    if (father[i].equals(gFather)){
+                        son = parent[i][j-1];
+                    }
+                }
+            }  System.out.println();
         }
-
+        //count calculate
+        for (String fstr :father) {
+            if(fstr.equals(son)) {
+                System.out.println(fstr);
+                count++;
+            }
+        }
+        System.out.println(count);
     }
-
-
 }
