@@ -1,4 +1,5 @@
-public class AmstrongChk {
+public class
+AmstrongChk {
     public static void main(String[] args) {
        AmstrongChk ams= new AmstrongChk();
 
