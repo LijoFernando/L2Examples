@@ -1,6 +1,6 @@
 public class StringContains {
     public static void main(String[] args) {
-        String word = "lijo";
+        String word = "leijo";
         String sentence = "tuaslijodkabchr";
         //String containValue = sentence.substring(sentence.indexOf(word),sentence.indexOf(word.charAt(word.length()-1))+1);
 //        if(word.equals(containValue)){
@@ -17,8 +17,9 @@ public class StringContains {
 //        }
 
                int position = sentence.indexOf(word);
+               System.out.println(position);
                if (position !=-1) {
-                   String containValue = sentence.substring(position, sentence.indexOf(word.charAt(word.length() - 1)) + 1);
+                   String containValue = sentence.substring(sentence.indexOf(word));
                    System.out.println(containValue);
                }
                 else {
