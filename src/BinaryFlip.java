@@ -5,12 +5,16 @@ public class BinaryFlip {
         Boolean isAlternative = true;
         BinaryFlip bflip = new BinaryFlip();
         if (!binaryVal.contains("11") || !binaryVal.contains("00")) {
-            bflip.minFlip(binaryVal);
+          //  bflip.minFlip(binaryVal);
         }
+        else {
+            System.out.println("Already Alternating");
+        }
+
 
     }
     public void minFlip(String s) {
-
+        Integer.toBinaryString()
     }
 
 }
