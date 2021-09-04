@@ -2,15 +2,14 @@ package roundThree;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.*;
 
 
 public class BookTicket {
     static Map<Integer,PassengerInfo> passengerMap = new HashMap<>();
     PassengerInfo passInfo = new PassengerInfo();
-    AvailableTickets avTkt = new AvailableTickets();
-    AvailableTickets availableTickets = new AvailableTickets();
+    GenerateTickets avTkt = new GenerateTickets();
+    GenerateTickets generateTickets = new GenerateTickets();
 
     public void inputDetails() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,10 +25,11 @@ public class BookTicket {
     }
 
     public String bookticket(String name,int age,char prefbreth) {
-        passInfo.setBookID(availableTickets.getBookID());
+        passInfo.setBookID(generateTickets.getBookID());
         passInfo.setName(name);
         passInfo.setAge(age);
-        passInfo.setAllotedBreth(availableTickets.allotBreth(prefbreth));
+        passInfo.setPrebreth(avTkt.allotBreth(prefbreth));
+        passInfo.setAllotedBreth(avTkt.allotSeat(prefbreth));
         int bookID = passInfo.getBookID();
         passengerMap.put(bookID,passInfo);
         return passengerMap.get(bookID).toString();

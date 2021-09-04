@@ -1,14 +1,14 @@
 package roundThree;
 import java.util.*;
 
-public class AvailableTickets {
+public class GenerateTickets {
     Map <String , Integer> ticketsMap = Tickets.getAllTicketsCount();
     private int upBreth = ticketsMap.get("upBreth");
     private int midBreth = ticketsMap.get("midBreth");
     private int lwBreth = ticketsMap.get("lwBreth");
     private int rAC = ticketsMap.get("rAC");
     private int wList = ticketsMap.get("wList");
-    private int ticketNo =0;
+    private int ticketNo =ticketsMap.get("ticketNo");
 
     public boolean isAvailable(){
         if (upBreth ==0 && midBreth == 0 && lwBreth == 0 && rAC == 0 && wList == 0 ) {
@@ -27,11 +27,12 @@ public class AvailableTickets {
         int bookID =  (int)(Math.random()* 100000);
         return bookID;
     }
+
     public void ticketReduce(String breth) {
         ticketsMap.put( breth, ticketsMap.get(breth)-1);
     }
 
-    public String allotBreth(char prebreth){
+    public char allotBreth(char prebreth){
         char pb = brethFull(prebreth);
         switch(pb) {
             case 'L': if(lwBreth != 0) {
@@ -62,7 +63,7 @@ public class AvailableTickets {
             //no tickets in Lower, Middle and Upper
             case 'R': if(rAC!=0){
                         pb='R';
-                        ticketReduce("rRC");
+                        ticketReduce("rAC");
                         ++ticketNo;
                         break;
                         }
@@ -74,11 +75,14 @@ public class AvailableTickets {
                         break;
         }
 
-        return pb+""+ticketNo;
+        return pb;
     }
-
+    public String allotSeat(char breth){
+          String seatNo = allotBreth(breth)+""+ticketNo;
+          return seatNo;
+    }
     @Override
     public String toString(){
-        return "Available:"+upBreth+midBreth+lwBreth+"RAC:"+rAC;
+        return "Available: "+(upBreth+midBreth+lwBreth)+", RAC: "+rAC;
     }
 }

@@ -1,15 +1,17 @@
 package roundThree;
 import java.util.*;
 
-public class Tickets {
-    static Map <String, Integer > map = new HashMap<>();
 
+public class Tickets {
+
+    static Map <String, Integer > map = new HashMap<>();
     public static void loadTickets(){
-        map.put("upBreth", 0);
-        map.put("midBreth",0);
-        map.put("lwBreth",0);
-        map.put("rAC",0);
-        map.put("wList",0);
+        map.put("upBreth", 21);
+        map.put("midBreth",21);
+        map.put("lwBreth",21);
+        map.put("rAC",16);
+        map.put("wList",10);
+        map.put("ticketNo",0);
     }
 
     public static Map getAllTicketsCount(){
@@ -17,6 +19,9 @@ public class Tickets {
             loadTickets();
         }
         return map;
+    }
+    public static String reAllocateTicket(char breth){
+
     }
 
     public void getTicketsCount() {
