@@ -20,8 +20,8 @@ public class Tickets {
         }
         return map;
     }
-    public static String reAllocateTicket(char breth){
-
+    public String reAllocateTicket(char breth){
+        return "Rellocated";
     }
 
     public void getTicketsCount() {
