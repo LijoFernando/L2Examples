@@ -29,8 +29,9 @@ public class DSExamples {
         System.out.println(linkList.get(3));
     }
     public void dblLinkList(){
-        LinkedList<String> dblLinkList = new DoublList<>()
-
+//        Stack<String> lineQueue = new Queue<>();
+//        lineQueue.push("I am");
+//        lineQueue.push("Lijo");
     }
 
     public static void main(String[] args) {
