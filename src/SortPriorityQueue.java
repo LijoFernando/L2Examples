@@ -7,7 +7,7 @@ import java.util.*;
         public static void merge(int[] a,int[] b,int n, int m) {
 
             int[] mergedAry = new int[n+m];
-            Queue<Integer> pq= new PriorityQueue<Integer>();
+            Queue<Integer> pq= new PriorityQueue<>();
 
             for(int i:a) {
                 pq.add(i);
@@ -40,7 +40,3 @@ import java.util.*;
             merge(A, B, N, M);
         }
     }
-
-// This code is contributed by todaysgaurav
-
-
