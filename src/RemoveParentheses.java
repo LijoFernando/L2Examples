@@ -1,7 +1,7 @@
 public class RemoveParentheses {
 
     public static void main(String[] args) {
-        String value ="(47((56))";
+        String value ="(47(((56))";
         int valueSize = value.length();
             for (int i = 0; i <valueSize; i++) {
                 char firstIn = value.charAt(i);
