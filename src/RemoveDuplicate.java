@@ -1,5 +1,3 @@
-import com.sun.deploy.security.CredentialManager;
-
 import java.util.Arrays;
 
 public class RemoveDuplicate {
