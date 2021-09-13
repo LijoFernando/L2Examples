@@ -1,6 +1,6 @@
 public class FindFactorial {
     public static void main(String[] args) {
-        int n = 4;
+        int n = 15;
         System.out.println(findFactorial(n));
         System.out.println(findFactorial2(n));
     }
