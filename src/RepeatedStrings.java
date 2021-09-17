@@ -35,7 +35,7 @@ import java.util.Map.Entry;
 
             for (int i = 0; i < array.length-1; i++) {
                 if (array[i] == array[i+1]) {
-                    System.out.print(array[i] + " ");
+                   System.out.print(array[i] + " ");
                     int count = 0;
                     while (i < array.length-1 && array[i] == array[i+1]) {
                         i++;
@@ -44,7 +44,7 @@ import java.util.Map.Entry;
                     System.out.print(count + "\n");
                 }
             }
-            System.out.println(System.currentTimeMillis()-start);
+           System.out.println(System.currentTimeMillis()-start);
         }
 
 
