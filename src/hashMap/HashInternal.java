@@ -9,7 +9,6 @@ public class HashInternal {
 
     private static void demoHMap(){
         hMap.put("abc",14);
-
         String str ="FB";
         String str1 ="Ea";
         System.out.println(str.hashCode());
