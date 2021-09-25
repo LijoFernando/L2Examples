@@ -2,20 +2,23 @@ package roundThree;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.Set;
 
 public class TrainBooking {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BookTicket bk;
 
         Boolean exit = true;
 
-        while(exit) {
-            System.out.println("Select -> 1:BookTciket | 2: Show Tickets | 3. Passenger List | 4.exit" );
+        while (exit) {
+            System.out.println("Select -> 1:BookTicket | 2: Show Tickets | 3. Cancel Ticket | 4.Show Booked Tickets |5.Ticket Enquiry |0.exit");
             int choice = Integer.parseInt(br.readLine());
             switch (choice) {
                 case 1:
-                    BookTicket bk = new BookTicket();
+                    bk = new BookTicket();
                     bk.inputDetails();
                     break;
                 case 2:
@@ -26,10 +29,27 @@ public class TrainBooking {
                     System.out.println("Enter BookID");
                     int bookID = Integer.parseInt(br.readLine());
                     CancelTicket cancelTkt = new CancelTicket();
-                    cancelTkt.cancelTicketbyBookID(bookID);
+                    System.out.println(cancelTkt.cancelTicketbyBookID(bookID));
                     break;
                 case 4:
-                    exit=false;
+                    BookTicket bkTickt = new BookTicket();
+                    Set result = bkTickt.getPassengerList().entrySet();
+                    if (result != null) {
+                        System.out.println(result);
+                    }
+                    System.out.println("Record List Reached");
+                    break;
+                case 5:
+                    System.out.println("Enter your BookedID");
+                    int bookId = br.read();
+                    bk = new BookTicket();
+                    //PassengerInfo passengerDetail = bookedPassanger.get(bookId);
+                    Map bookedList = bk.getPassengerList();
+                    System.out.println(bookedList.get(bookId));
+                    break;
+
+                case 0:
+                    System.exit(0);
                     break;
             }
         }

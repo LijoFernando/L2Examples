@@ -8,6 +8,16 @@ public class PassengerInfo {
     private String ticket;
     private Integer bookID;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String status;
+
 
     public void setName(String name) {
         this.name = name;
@@ -41,6 +51,6 @@ public class PassengerInfo {
 
     @Override
     public String toString(){
-        return "BookID: "+getBookID()+"\nName: "+getName()+"\nAge: "+getAge()+"\nBreth: "+getAllotedBreth();
+        return "BookID: "+getBookID()+" Name: "+getName()+" Age: "+getAge()+" Breth: "+getAllotedBreth()+" Status: "+getStatus();
     }
 }
