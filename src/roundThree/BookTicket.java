@@ -6,13 +6,13 @@ import java.util.*;
 
 
 public class BookTicket {
-    static Map<Integer, PassengerInfo> passengerMap;
+    static Map<Integer, PassengerInfo> passengerMap  = new HashMap<>();
     PassengerInfo passInfo = new PassengerInfo();
     GenerateTickets avTkt = new GenerateTickets();
     GenerateTickets generateTickets = new GenerateTickets();
 
     public void inputDetails() throws Exception {
-        passengerMap = new HashMap<>();
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter Details");
         String name = br.readLine();
@@ -20,12 +20,12 @@ public class BookTicket {
         char prefBreth = (char) br.read();
         String status = "No TicketsAvailable";
         if (avTkt.isAvailable()) {
-            status = bookticket(name, age, prefBreth);
+            bookticket(name, age, prefBreth);
         }
-        System.out.println(status);
+        //System.out.println(status);
     }
 
-    public String bookticket(String name, int age, char prefbreth) {
+    public void bookticket(String name, int age, char prefbreth) {
         passInfo.setBookID(generateTickets.getBookID());
         passInfo.setName(name);
         passInfo.setAge(age);
@@ -35,14 +35,15 @@ public class BookTicket {
         passInfo.setStatus(avTkt.getStatus(alotedBreath));
         int bookID = passInfo.getBookID();
         passengerMap.put(bookID, passInfo);
-        return passengerMap.get(bookID).toString();
+        System.out.println("Map "+passengerMap);
+       // return passengerMap.get(bookID).toString();
     }
 
-    public Map getPassengerList() {
-        if (!passengerMap.isEmpty()) {
-            return passengerMap;
-        }
-        return null;
+    public Map<Integer, PassengerInfo> getPassengerList() {
+       // if (!passengerMap.isEmpty()) {
+            System.out.println("Map Filled:"+passengerMap);
+      //  }
+        return passengerMap;
     }
 }
 

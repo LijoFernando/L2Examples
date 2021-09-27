@@ -2,14 +2,12 @@ package Collections;
 
 import java.util.Comparator;
 
-public class ComparatorDemo implements Comparator <Student>{
+public class ComparatorDemo implements Comparator<Student> {
 
-
-   public int compare(Student o1, Student o2) {
-
-       if(o1.getAge()==o2.getAge()) return 0;
-       else if(o1.getAge()>o2.getAge()) return 1;
-       return -1;
-   }
+    public int compare(Student o1, Student o2) {
+        if (o1.getAge() == o2.getAge()) return 0;
+        else if (o1.getAge() > o2.getAge()) return 1;
+        return -1;
+    }
 
 }
